@@ -1,0 +1,41 @@
+#
+# parameter file for leap frog integration
+#
+nSteps          		= 1100
+# ^total number of time steps in integration
+
+dTheta          		= 0.7
+# ^related to accuracy of of orbit integration, takes into account self-gravity; can lower this if integration inaccurate
+
+dEta					= .03
+# ^the reciprocal of this corresponds to the number of steps per orbit; can lower dEta if integration inaccurate (and lowering dTheta isn't enough)
+
+dDelta          		= 0.5
+# ^corresponds to amount of time per time step; total integration time = dDelta*nSteps
+
+iOutInterval    		= 1.0
+# ^new .tipsy file is produced after every n time-steps, where n = iOutInterval
+
+achInFile       		= rvtipsy.00000
+# ^name of file produced by GalactICS from which to extract data for integration
+
+achOutName      		= orbit_integration
+# ^name of new .tipsy file
+
+iLogInterval			= 100
+# ^how many times energy measurements are recorded during integration
+
+bDoExternalGravity      = 0
+# ^whether or not to incorporate ChaNGa's externalGravity.cpp
+
+bLogarithmicHalo 	    = 0
+# ^whether or not to incorporate external Logarithmic Halo potential
+
+bEpsAccStep             = 0
+# ^turn on if gettting inaccurate looking orbits, tied into dSoft
+
+bGravStep               = 1
+# ^whether or not to incorporate self-gravity
+
+dSoft                   = 2
+# ^softening radius
